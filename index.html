@@ -11,11 +11,22 @@
         .text-pure-orange { color: #ea580c; }
         .bg-pure-orange { background-color: #ea580c; }
         .wa-green { background-color: #22c55e; }
+        
+        /* Perbaikan: Memastikan video selalu rapi */
         video { object-fit: cover; border-radius: 1.5rem; width: 100%; height: 100%; transition: transform 0.5s ease; }
+        
         .scientific-card { border: 1px solid #fed7aa; transition: all 0.4s ease; background: #fffcf9; }
         .scientific-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(234, 88, 12, 0.1); border-color: #ea580c; }
-        /* Grid 3 Kolom Linear untuk Windows */
-        .grid-custom-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+        
+        /* Perbaikan Grid: Responsive 1 kolom di HP, 3 di Desktop */
+        .grid-custom-3 { 
+            display: grid; 
+            grid-template-columns: repeat(1, minmax(0, 1fr)); 
+            gap: 2rem; 
+        }
+        @media (min-width: 1024px) {
+            .grid-custom-3 { grid-template-columns: repeat(3, 1fr); }
+        }
     </style>
 </head>
 <body class="text-slate-800">
@@ -24,20 +35,20 @@
         <source src="suasana-alam.mp3" type="audio/mpeg">
     </audio>
 
-    <div class="fixed bottom-8 right-8 z-[100] group">
-        <a href="https://wa.me/6287800070808?text=Halo%20dr.%20Anindiyah,%20saya%20ingin%20konsultasi%20ilmiah%20produk%20Pure%20Terra" target="_blank" class="wa-green text-white px-6 py-4 rounded-full shadow-2xl hover:scale-110 transition-all flex items-center gap-3">
-            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.72.94 3.659 1.437 5.63 1.438h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-            <span class="font-bold text-sm uppercase tracking-wider">Konsultasi dr. Anin</span>
+    <div class="fixed bottom-6 right-6 z-[100]">
+        <a href="https://wa.me/6287800070808?text=Halo%20dr.%20Anindiyah,%20saya%20ingin%20konsultasi%20ilmiah%20produk%20Pure%20Terra" target="_blank" class="wa-green text-white px-5 py-3 rounded-full shadow-2xl hover:scale-110 transition-all flex items-center gap-3">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.72.94 3.659 1.437 5.63 1.438h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+            <span class="font-bold text-[12px] uppercase tracking-wider">Konsultasi dr. Anin</span>
         </a>
     </div>
 
-    <nav class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-xl border-b border-orange-100">
+    <nav class="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-xl border-b border-orange-100">
         <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
-            <div class="flex items-center gap-3">
-                <img src="logo-urindo.png" alt="Urindo" class="h-10 w-auto">
-                <div class="h-8 w-px bg-orange-200"></div>
-                <img src="logo-pure-terra.png" alt="Pure Terra" class="h-10 w-auto">
-                <span class="text-xl font-extrabold text-pure-orange tracking-tighter uppercase">Pure Terra™</span>
+            <div class="flex items-center gap-2 md:gap-3">
+                <img src="logo-urindo.png" alt="Urindo" class="h-8 md:h-10 w-auto">
+                <div class="h-6 w-px bg-orange-200"></div>
+                <img src="logo-pure-terra.png" alt="Pure Terra" class="h-8 md:h-10 w-auto">
+                <span class="text-lg md:text-xl font-extrabold text-pure-orange tracking-tighter uppercase">Pure Terra™</span>
             </div>
             <div class="hidden md:flex gap-8 text-[10px] font-black text-slate-400 uppercase tracking-widest">
                 <a href="#solusi" class="hover:text-pure-orange transition">Mengapa Kami?</a>
@@ -47,162 +58,104 @@
         </div>
     </nav>
 
-    <header class="pt-40 pb-24 px-6 bg-gradient-to-b from-orange-50/50 to-white overflow-hidden">
-        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
-            <div class="space-y-8">
-                <div class="inline-flex items-center bg-orange-100 text-pure-orange px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest shadow-sm">
+    <header class="pt-32 pb-16 md:pt-40 md:pb-24 px-6 bg-gradient-to-b from-orange-50/50 to-white overflow-hidden">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 md:gap-16 items-center">
+            <div class="order-2 lg:order-1 space-y-6 md:space-y-8">
+                <div class="inline-flex items-center bg-orange-100 text-pure-orange px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest">
                     Inovasi Epidemiologi 2026
                 </div>
-                <h1 class="text-6xl lg:text-7xl font-black text-slate-900 leading-[1.05] tracking-tighter">
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-black text-slate-900 leading-tight md:leading-[1.05] tracking-tighter">
                     Proteksi Total, <br><span class="text-pure-orange italic">Bebas Gigitan.</span>
                 </h1>
-                <p class="text-xl text-slate-600 leading-relaxed font-medium max-w-lg">
-                    Gabungkan kekuatan <strong>Sunscreen SPF 30+++</strong> dengan <strong>Repellent Alami</strong>. Solusi praktis memutus rantai transmisi vektor penyakit di siang hari.
+                <p class="text-lg md:text-xl text-slate-600 leading-relaxed font-medium max-w-lg">
+                    Gabungkan kekuatan <strong>Sunscreen SPF 30+++</strong> dengan <strong>Repellent Alami</strong>.
                 </p>
-                <div class="flex flex-wrap gap-5 font-bold">
-                    <div class="bg-pure-orange text-white px-10 py-5 rounded-3xl shadow-xl hover:scale-105 transition-all">
-                        Hanya Rp 25.000 / 100ml
-                    </div>
+                <div class="bg-pure-orange text-white px-8 py-4 md:px-10 md:py-5 rounded-3xl shadow-xl hover:scale-105 transition-all text-center lg:text-left inline-block font-bold">
+                    Hanya Rp 25.000 / 100ml
                 </div>
-                <p class="text-xs font-bold text-slate-400 uppercase tracking-[0.3em]">🇮🇩 Bangga Menggunakan Produk Indonesia</p>
             </div>
-            <div class="relative">
-                <img src="sample-pureterra.png" alt="Produk Riset" class="rounded-[4rem] shadow-2xl border-[10px] border-white w-full h-[550px] object-cover hover:scale-[1.02] transition-transform duration-700">
-                <div class="absolute -bottom-10 -left-6 bg-white p-8 rounded-[3rem] shadow-2xl border-l-[12px] border-pure-orange max-w-xs">
-                    <p class="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2">Pemberitahuan:</p>
-                    <p class="text-sm text-slate-800 font-bold italic leading-relaxed">Produk sedang dalam tahap <strong>penyempurnaan kualitas akhir</strong> bersama PT. Usaha Sukses Bersama.</p>
+            <div class="order-1 lg:order-2 relative">
+                <img src="sample-pureterra.png" alt="Produk Riset" class="rounded-[2rem] md:rounded-[4rem] shadow-2xl border-[6px] md:border-[10px] border-white w-full h-[350px] md:h-[550px] object-cover">
+                <div class="absolute -bottom-6 -left-4 md:-bottom-10 md:-left-6 bg-white p-6 md:p-8 rounded-[2rem] md:rounded-[3rem] shadow-2xl border-l-[8px] md:border-l-[12px] border-pure-orange max-w-[250px] md:max-w-xs">
+                    <p class="text-[9px] font-black text-slate-400 uppercase mb-1">Status:</p>
+                    <p class="text-xs md:text-sm text-slate-800 font-bold italic">Tahap penyempurnaan kualitas akhir.</p>
                 </div>
             </div>
         </div>
     </header>
 
-    <section id="solusi" class="py-24 bg-white px-6">
+    <section id="lab" class="py-16 md:py-24 px-6 bg-slate-50">
         <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16 space-y-4">
-                <h2 class="text-4xl font-black text-slate-900 uppercase">Tameng Kulit Keluarga Anda</h2>
-                <div class="w-20 h-1.5 bg-pure-orange mx-auto rounded-full"></div>
-            </div>
-            <div class="grid lg:grid-cols-3 gap-8">
-                <div class="p-10 scientific-card rounded-[3rem]">
-                    <h4 class="text-lg font-bold mb-4 text-pure-orange uppercase">Double Barrier</h4>
-                    <p class="text-slate-500 text-sm leading-relaxed font-medium">Bukan sekadar lotion. Pure Terra™ mengintegrasikan agen fotoprotektif mineral dan repellent botani dalam satu sediaan harian yang efisien.</p>
-                </div>
-                <div class="p-10 scientific-card rounded-[3rem]">
-                    <h4 class="text-lg font-bold mb-4 text-pure-orange uppercase">Broad Prevention</h4>
-                    <p class="text-slate-500 text-sm leading-relaxed font-medium">Langkah preventif menyeluruh terhadap gigitan nyamuk <em>Aedes aegypti</em>, <em>Culex</em>, dan serangga lainnya yang aktif saat intensitas UV tertinggi.</p>
-                </div>
-                <div class="p-10 scientific-card rounded-[3rem]">
-                    <h4 class="text-lg font-bold mb-4 text-pure-orange uppercase">Clinical Safety</h4>
-                    <p class="text-slate-500 text-sm leading-relaxed font-medium">Formulasi <strong>DEET-Free</strong> yang dirancang aman untuk barier kulit anak-anak dan lansia, mencegah iritasi sistemik jangka panjang.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="lab" class="py-24 px-6 bg-slate-50">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-20">
-                <h2 class="text-3xl font-black text-slate-900 uppercase tracking-widest">Evidence-Based R&D Process</h2>
-                <p class="mt-4 text-slate-500 font-bold uppercase text-[10px] tracking-[0.4em]">Dokumentasi Penelitian Tim Epidemiologi Urindo</p>
+            <div class="text-center mb-12 md:mb-20">
+                <h2 class="text-2xl md:text-3xl font-black text-slate-900 uppercase tracking-widest">Evidence-Based R&D Process</h2>
+                <p class="mt-4 text-slate-500 font-bold uppercase text-[9px] tracking-[0.3em]">Dokumentasi Penelitian Tim Epidemiologi Urindo</p>
             </div>
 
             <div class="grid-custom-3">
-                <div class="space-y-6">
-                    <div class="aspect-[4/5] overflow-hidden rounded-[2.5rem] shadow-xl border-4 border-white">
+                <div class="space-y-4">
+                    <div class="aspect-[4/5] overflow-hidden rounded-[2rem] shadow-xl border-4 border-white bg-slate-200">
                         <video autoplay muted loop playsinline><source src="rnd.mp4" type="video/mp4"></video>
                     </div>
                     <div class="text-center">
                         <h5 class="text-[10px] font-black uppercase text-pure-orange">Phase 01: Lab Foundation</h5>
-                        <p class="text-xs font-bold text-slate-500 mt-1 uppercase">Uji Formulasi & Viskositas</p>
+                        <p class="text-xs font-bold text-slate-500 uppercase">Uji Formulasi & Viskositas</p>
                     </div>
                 </div>
 
-                <div class="space-y-6">
-                    <div class="grid grid-cols-2 gap-3 h-[450px]">
-                        <video autoplay muted loop playsinline class="shadow-md"><source src="ambil-jeruk.mp4" type="video/mp4"></video>
-                        <video autoplay muted loop playsinline class="shadow-md"><source src="essential-oil.mp4" type="video/mp4"></video>
-                        <video autoplay muted loop playsinline class="shadow-md"><source src="potong-lidah-buaya.mp4" type="video/mp4"></video>
-                        <video autoplay muted loop playsinline class="shadow-md"><source src="lidah-buaya.mp4" type="video/mp4"></video>
+                <div class="space-y-4">
+                    <div class="grid grid-cols-2 gap-2 aspect-[4/5]">
+                        <div class="overflow-hidden rounded-2xl bg-slate-200"><video autoplay muted loop playsinline><source src="ambil-jeruk.mp4" type="video/mp4"></video></div>
+                        <div class="overflow-hidden rounded-2xl bg-slate-200"><video autoplay muted loop playsinline><source src="essential-oil.mp4" type="video/mp4"></video></div>
+                        <div class="overflow-hidden rounded-2xl bg-slate-200"><video autoplay muted loop playsinline><source src="potong-lidah-buaya.mp4" type="video/mp4"></video></div>
+                        <div class="overflow-hidden rounded-2xl bg-slate-200"><video autoplay muted loop playsinline><source src="lidah-buaya.mp4" type="video/mp4"></video></div>
                     </div>
-                    <div class="bg-pure-orange p-6 rounded-[2rem] text-center text-white">
-                        <h5 class="text-[10px] font-black uppercase mb-1">Phase 02: Bio-Extraction</h5>
-                        <p class="text-xs font-bold uppercase">Isolasi Limonene & Polimer Aloe Vera</p>
+                    <div class="bg-pure-orange p-5 rounded-[2rem] text-center text-white shadow-lg">
+                        <h5 class="text-[9px] font-black uppercase">Phase 02: Bio-Extraction</h5>
+                        <p class="text-[11px] font-bold uppercase">Isolasi Limonene & Lidah Buaya</p>
                     </div>
                 </div>
 
-                <div class="space-y-6">
-                    <div class="flex flex-col gap-4 h-[450px]">
-                        <div class="h-1/2 overflow-hidden rounded-[2.5rem] shadow-lg border-4 border-orange-100">
+                <div class="space-y-4">
+                    <div class="flex flex-col gap-2 aspect-[4/5]">
+                        <div class="h-1/2 overflow-hidden rounded-[2rem] shadow-lg border-2 border-orange-100 bg-slate-200">
                             <video autoplay muted loop playsinline><source src="tekstur.mp4" type="video/mp4"></video>
                         </div>
-                        <div class="h-1/2 overflow-hidden rounded-[2.5rem] shadow-lg border-4 border-orange-100">
+                        <div class="h-1/2 overflow-hidden rounded-[2rem] shadow-lg border-2 border-orange-100 bg-slate-200">
                             <video autoplay muted loop playsinline><source src="tuang-lotion.mp4" type="video/mp4"></video>
                         </div>
                     </div>
                     <div class="text-center">
                         <h5 class="text-[10px] font-black uppercase text-pure-orange">Phase 03: Final Sensory</h5>
-                        <p class="text-xs font-bold text-slate-500 mt-1 uppercase">Absorbsi Cepat & Tidak Lengket</p>
+                        <p class="text-xs font-bold text-slate-500 uppercase">Absorbsi Cepat & Nyaman</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="manfaat" class="py-24 bg-slate-900 text-white px-6">
-        <div class="max-w-7xl mx-auto">
-            <h2 class="text-3xl font-black text-center mb-20 tracking-[0.3em] uppercase">Efikasi Komponen Aktif</h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10 text-center">
-                <div class="space-y-5">
-                    <h3 class="text-pure-orange font-black text-xl italic uppercase">Limonene</h3>
-                    <p class="text-xs text-slate-400 leading-relaxed">Ekstrak <em>Citrus fam</em> yang melumpuhkan sistem sensorik nyamuk secara alami tanpa racun kimia berbahaya.</p>
-                </div>
-                <div class="space-y-5">
-                    <h3 class="text-pure-orange font-black text-xl italic uppercase">Mineral UV</h3>
-                    <p class="text-xs text-slate-400 leading-relaxed">Zinc Oxide & Titanium Dioxide memantulkan radiasi UV secara fisik, menjaga integritas DNA kulit harian.</p>
-                </div>
-                <div class="space-y-5">
-                    <h3 class="text-pure-orange font-black text-xl italic uppercase">Aloe Complex</h3>
-                    <p class="text-xs text-slate-400 leading-relaxed">Sinergi Lidah Buaya & Ceramide untuk menenangkan kulit terbakar matahari dan memperbaiki barier lipid.</p>
-                </div>
-                <div class="space-y-5">
-                    <h3 class="text-pure-orange font-black text-xl italic uppercase">Antioxidant</h3>
-                    <p class="text-xs text-slate-400 leading-relaxed">Jujuba Oil dengan flavonoid tinggi menstimulasi regenerasi sel epidermis pasca paparan panas luar ruangan.</p>
-                </div>
+    <footer class="bg-white py-16 px-6 border-t border-orange-100">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 md:gap-20 items-end">
+            <div class="space-y-8">
+                <h3 class="text-4xl md:text-5xl font-black text-pure-orange uppercase tracking-tighter">Pure Terra™ <br>Edition 2026</h3>
+                <a href="https://wa.me/6287800070808" class="text-lg md:text-2xl font-black text-slate-800 hover:text-green-500 transition flex items-center gap-3">
+                    <span class="text-green-500">●</span> dr. Anindiyah Meyriasari K.
+                </a>
             </div>
-        </div>
-    </section>
-
-    <footer class="bg-white py-24 px-6 border-t border-orange-100">
-        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-20 items-end">
-            <div class="space-y-12">
-                <h3 class="text-5xl font-black text-pure-orange uppercase tracking-tighter">Pure Terra™ <br>Edition 2026</h3>
-                <div class="space-y-4">
-                    <p class="text-[10px] font-black text-slate-400 uppercase tracking-widest italic">Hubungi Tim Ahli Kami:</p>
-                    <a href="https://wa.me/6287800070808" class="text-2xl font-black text-slate-800 hover:text-green-500 transition flex items-center gap-4">
-                        <span class="text-green-500 text-4xl">●</span> dr. Anindiyah Meyriasari K.
-                    </a>
-                </div>
-            </div>
-            <div class="text-left md:text-right space-y-10">
-                <div class="space-y-4">
-                    <p class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Research Team (Urindo 2024):</p>
-                    <p class="font-black text-xl text-slate-800 leading-tight">dr. Sopiah Mamat, dr. Anindiyah Meyriasari K., <br>Alfinatun Musdzalifah, S.Ked, Aulia Arief Rahman, S.K.M.</p>
-                </div>
-                <div class="pt-8 border-t border-slate-100">
-                    <p class="text-pure-orange font-black italic text-sm uppercase tracking-tighter">Program Studi Magister Kesehatan Masyarakat <br> Universitas Respati Indonesia</p>
-                    <p class="text-slate-300 text-[10px] tracking-[0.5em] uppercase mt-10 font-bold">www.Pureterraedition.com</p>
-                </div>
+            <div class="text-left md:text-right space-y-6">
+                <p class="text-[9px] font-black text-slate-400 uppercase tracking-widest">Research Team (Urindo 2024)</p>
+                <p class="font-bold text-sm md:text-lg text-slate-800 leading-tight">dr. Sopiah Mamat, dr. Anindiyah Meyriasari K., Alfinatun Musdzalifah, Aulia Arief Rahman.</p>
+                <p class="text-pure-orange font-black italic text-[10px] md:text-xs uppercase">Magister Kesehatan Masyarakat - Universitas Respati Indonesia</p>
             </div>
         </div>
     </footer>
 
     <script>
         const audio = document.getElementById('bgMusic');
-        const trigger = () => {
-            if (audio.paused) { audio.play().catch(e => console.log("Audio deferred")); }
-            ['click', 'scroll', 'touchstart', 'mousemove'].forEach(ev => window.removeEventListener(ev, trigger));
+        const startAudio = () => {
+            audio.play().catch(() => {});
+            ['click', 'touchstart', 'scroll'].forEach(e => window.removeEventListener(e, startAudio));
         };
-        ['click', 'scroll', 'touchstart', 'mousemove'].forEach(ev => window.addEventListener(ev, trigger));
+        ['click', 'touchstart', 'scroll'].forEach(e => window.addEventListener(e, startAudio));
     </script>
 </body>
 </html>
