@@ -3,198 +3,214 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pure Terra™ - Epidemiological Innovation Project</title>
+    <title>Pure Terra™ | Inovasi Preventif Epidemiologi</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; }
-        .hero-gradient { background: linear-gradient(135deg, #FFF5ED 0%, #FFFFFF 100%); }
-        video { object-fit: cover; width: 100%; height: 100%; }
-        .scientific-card { transition: all 0.3s ease; border: 1px solid rgba(0,0,0,0.05); }
-        .scientific-card:hover { transform: translateY(-5px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); }
+        .glass-nav { background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(12px); }
+        .hero-bg { background: radial-gradient(circle at top right, #FFF5ED, #FFFFFF); }
+        video { object-fit: cover; border-radius: 1.5rem; transition: transform 0.5s ease; }
+        .scientific-card { background: #FFFFFF; border: 1px solid #F3F4F6; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        .scientific-card:hover { transform: translateY(-8px); box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.08); border-color: #FB923C; }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-900">
+<body class="bg-slate-50 text-slate-900 overflow-x-hidden">
 
     <audio id="bgMusic" loop>
         <source src="suasana-alam.mp3" type="audio/mpeg">
     </audio>
 
-    <div class="fixed bottom-6 right-6 z-[100]">
-        <a href="https://wa.me/6287800070808?text=informasi%20lebih%20lanjut" target="_blank" class="bg-green-500 text-white p-4 rounded-full shadow-2xl hover:bg-green-600 transition flex items-center gap-2 group">
-            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.72.94 3.659 1.437 5.63 1.438h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-            <span class="font-bold text-sm overflow-hidden whitespace-nowrap w-0 group-hover:w-32 transition-all duration-300 uppercase">Chat WhatsApp</span>
+    <div class="fixed bottom-8 right-8 z-[100] flex flex-col items-end gap-3 group">
+        <div class="bg-white px-4 py-2 rounded-xl shadow-lg border text-xs font-bold text-slate-600 opacity-0 group-hover:opacity-100 transition-opacity">Konsultasi dr. Anindiyah</div>
+        <a href="https://wa.me/6287800070808?text=informasi%20lebih%20lanjut" target="_blank" class="bg-emerald-500 text-white p-5 rounded-3xl shadow-2xl hover:bg-emerald-600 transition-all hover:scale-110 flex items-center justify-center">
+            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.72.94 3.659 1.437 5.63 1.438h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
         </a>
     </div>
 
-    <nav class="bg-white/95 backdrop-blur-md sticky top-0 z-50 py-3 px-6 border-b shadow-sm">
-        <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <div class="flex items-center space-x-4">
-                <img src="logo-urindo.png" alt="Logo Urindo" class="h-10 w-auto">
-                <div class="h-8 w-px bg-gray-300"></div>
-                <img src="logo-pure-terra.png" alt="Logo Pure Terra" class="h-10 w-auto">
-                <span class="text-xl font-bold text-orange-600 tracking-tight uppercase">Pure Terra™</span>
+    <nav class="glass-nav fixed top-0 w-full z-50 border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+            <div class="flex items-center gap-4">
+                <img src="logo-urindo.png" alt="Urindo" class="h-10 w-auto">
+                <div class="h-8 w-px bg-slate-200"></div>
+                <img src="logo-pure-terra.png" alt="Pure Terra" class="h-10 w-auto">
+                <span class="text-xl font-extrabold text-orange-600 tracking-tighter uppercase">Pure Terra™</span>
             </div>
-            <div class="hidden lg:flex space-x-6 text-[10px] font-bold text-gray-500 uppercase tracking-widest">
-                <a href="#problem" class="hover:text-orange-600 transition">Problem Analysis</a>
-                <a href="#proses" class="hover:text-orange-600 transition">R&D Gallery</a>
-                <a href="#ilmiah" class="hover:text-orange-600 transition">Ingredient Efficacy</a>
+            <div class="hidden md:flex gap-8 text-[11px] font-extrabold text-slate-500 uppercase tracking-[0.2em]">
+                <a href="#epidemiology" class="hover:text-orange-600 transition">Urgensi</a>
+                <a href="#proses" class="hover:text-orange-600 transition">R&D Proses</a>
+                <a href="#formulasi" class="hover:text-orange-600 transition">Formulasi</a>
             </div>
         </div>
     </nav>
 
-    <header class="hero-gradient py-16 px-6 border-b">
-        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-            <div class="space-y-6 text-center md:text-left">
-                <div class="inline-block bg-orange-100 text-orange-700 px-4 py-1 rounded-full text-[10px] font-bold uppercase tracking-[0.2em]">Exhibition Day - Feb 2026</div>
-                <h1 class="text-5xl md:text-7xl font-extrabold text-gray-900 leading-[1.1]">Proteksi Nyamuk <br><span class="text-orange-600">Anti UV & Sehat</span></h1>
-                <p class="text-lg text-gray-600 leading-relaxed font-medium italic">"Inovasi Daily Protective Repellent untuk memutus rantai transmisi virus Chikungunya melalui perlindungan barier epidermis ganda."</p>
-                <div class="flex flex-wrap gap-4 font-bold justify-center md:justify-start">
-                    <div class="bg-orange-600 text-white px-10 py-4 rounded-2xl shadow-xl flex items-center gap-3">Rp 25.000 / 100ml</div>
-                    <a href="https://wa.me/6287800070808?text=informasi%20lebih%20lanjut" class="bg-white border-2 border-green-500 text-green-600 px-10 py-4 rounded-2xl hover:bg-green-50 transition">Pesan Sekarang</a>
+    <section class="hero-bg pt-32 pb-24 px-6">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+            <div class="space-y-8">
+                <div class="inline-flex items-center bg-orange-100 text-orange-700 px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest shadow-sm">
+                    Inovasi Magister Epidemiologi 2026
+                </div>
+                <h1 class="text-6xl lg:text-7xl font-black text-slate-900 leading-[1.05]">
+                    Mitigasi Vektor <br><span class="text-orange-600">Anti UV & Sehat</span>
+                </h1>
+                <p class="text-lg text-slate-600 leading-relaxed font-medium max-w-xl">
+                    Satu-satunya <strong>Daily Protective Repellent</strong> yang mengintegrasikan proteksi radiasi fotobiologi (UV) dengan penghalau vektor <em>Aedes aegypti</em> untuk menekan angka insidensi Chikungunya.
+                </p>
+                <div class="flex flex-wrap gap-5 font-bold">
+                    <div class="bg-slate-900 text-white px-10 py-5 rounded-[2rem] shadow-2xl flex items-center gap-4">
+                        <span class="text-sm font-light border-r pr-4 border-slate-700 uppercase tracking-widest">Pricing</span>
+                        Rp 25.000
+                    </div>
+                    <a href="https://wa.me/6287800070808?text=informasi%20lebih%20lanjut" class="bg-white border-2 border-orange-500 text-orange-600 px-10 py-5 rounded-[2rem] hover:bg-orange-50 transition-all flex items-center gap-2">Pesan Sampel</a>
                 </div>
             </div>
-            <div class="relative group">
-                <img src="sample-pureterra.png" alt="Sampel Produk" class="rounded-[3rem] shadow-2xl border-8 border-white w-full h-[500px] object-cover transition-all duration-500 group-hover:scale-[1.02]">
-                <div class="absolute -bottom-10 -right-6 bg-white p-6 rounded-3xl shadow-2xl border-l-[12px] border-orange-500 max-w-sm text-left">
-                    <p class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1 text-center">Batch Status Update:</p>
-                    <p class="text-sm text-gray-800 font-semibold italic leading-relaxed text-center">Saat ini sedang dalam tahap <strong>finalisasi kualitas batch revisi</strong> di mitra produksi kami, <strong>PT. Usaha Sukses Bersama</strong>.</p>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <section id="problem" class="py-24 bg-white px-6">
-        <div class="max-w-7xl mx-auto">
-            <h2 class="text-4xl font-extrabold text-center text-gray-900 mb-16 uppercase tracking-tight">Analisis Gaps & <br><span class="text-orange-600 text-2xl">Latar Belakang Intervensi</span></h2>
-            <div class="grid lg:grid-cols-3 gap-8">
-                <div class="p-10 bg-orange-50 rounded-[3rem] border border-orange-100 scientific-card">
-                    <h4 class="font-bold text-orange-600 mb-4 uppercase text-[10px] tracking-widest">Patofisiologi Pencegahan</h4>
-                    <p class="text-gray-700 text-sm leading-relaxed">Mekanisme penularan virus Chikungunya melalui vektor nyamuk <em>Aedes aegypti</em> terjadi paling aktif pada siang hari, bertepatan dengan paparan tertinggi radiasi ultraviolet (UV).</p>
-                </div>
-                <div class="p-10 bg-orange-50 rounded-[3rem] border border-orange-100 scientific-card">
-                    <h4 class="font-bold text-orange-600 mb-4 uppercase text-[10px] tracking-widest">Kesenjangan Intervensi</h4>
-                    <p class="text-gray-700 text-sm leading-relaxed">Belum adanya integrasi antara agen proteksi fotobiologi (sunscreen) dan agen repellent dalam satu sediaan praktis yang mendukung kepatuhan penggunaan harian masyarakat.</p>
-                </div>
-                <div class="p-10 bg-orange-50 rounded-[3rem] border border-orange-100 scientific-card">
-                    <h4 class="font-bold text-orange-600 mb-4 uppercase text-[10px] tracking-widest">Fokus Kesehatan Masyarakat</h4>
-                    <p class="text-gray-700 text-sm leading-relaxed">Pure Terra™ dirancang sebagai modalitas preventif yang aman bagi kelompok rentan, termasuk anak-anak dan lansia, dengan formulasi hipoalergenik non-toksik.</p>
+            <div class="relative">
+                <img src="sample-pureterra.png" alt="Pure Terra Sample" class="rounded-[3.5rem] shadow-[0_50px_100px_-20px_rgba(0,0,0,0.15)] border-8 border-white w-full h-[550px] object-cover transition transform hover:scale-[1.02] duration-700">
+                <div class="absolute -bottom-8 -left-8 bg-white p-8 rounded-[2.5rem] shadow-2xl border-l-[12px] border-orange-500 max-w-xs">
+                    <p class="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2">Production Status</p>
+                    <p class="text-sm text-slate-800 font-bold italic leading-relaxed">Tahap <strong>finalisasi kualitas batch revisi</strong> bersama mitra strategis PT. Usaha Sukses Bersama.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="proses" class="py-24 px-6 bg-gray-50">
+    <section id="epidemiology" class="py-24 bg-white px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16 space-y-4">
+                <h2 class="text-4xl font-black text-slate-900 uppercase">Analisis Gaps & Urgensi</h2>
+                <div class="w-24 h-2 bg-orange-500 mx-auto rounded-full"></div>
+            </div>
+            <div class="grid lg:grid-cols-3 gap-8">
+                <div class="p-12 scientific-card rounded-[3rem]">
+                    <div class="bg-orange-100 text-orange-600 w-12 h-12 rounded-2xl flex items-center justify-center font-black mb-6">01</div>
+                    <h4 class="text-lg font-bold mb-4">Integrasi Barier</h4>
+                    <p class="text-slate-500 text-sm leading-relaxed font-medium">Solusi atas absennya produk yang menggabungkan perlindungan fotoprotektif (Sunscreen) dan repellent nyamuk dalam satu sediaan harian.</p>
+                </div>
+                <div class="p-12 scientific-card rounded-[3rem]">
+                    <div class="bg-orange-100 text-orange-600 w-12 h-12 rounded-2xl flex items-center justify-center font-black mb-6">02</div>
+                    <h4 class="text-lg font-bold mb-4">Proteksi Vektor Siang</h4>
+                    <p class="text-slate-500 text-sm leading-relaxed font-medium">Nyamuk penyebab DBD dan Chikungunya paling aktif pada siang hari, saat paparan UV berada pada tingkat risiko tertinggi.</p>
+                </div>
+                <div class="p-12 scientific-card rounded-[3rem]">
+                    <div class="bg-orange-100 text-orange-600 w-12 h-12 rounded-2xl flex items-center justify-center font-black mb-6">03</div>
+                    <h4 class="text-lg font-bold mb-4">Keamanan Harian</h4>
+                    <p class="text-slate-500 text-sm leading-relaxed font-medium">Formulasi non-toksik yang aman digunakan jangka panjang oleh anak-anak (>2 thn) hingga lansia tanpa risiko iritasi sistemik.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="proses" class="py-24 px-6 bg-slate-50">
         <div class="max-w-7xl mx-auto text-center mb-20">
-            <h2 class="text-4xl font-extrabold text-gray-900 mb-4 uppercase">Evidence-Based R&D Process</h2>
-            <div class="w-24 h-2 bg-orange-500 mx-auto rounded-full mb-8"></div>
-            <p class="text-gray-500 max-w-2xl mx-auto italic font-medium uppercase text-xs tracking-widest">Dokumentasi Tahap Riset & Ekstraksi - Tim Epidemiologi Urindo</p>
+            <h2 class="text-4xl font-black text-slate-900 uppercase">Evidence-Based R&D Process</h2>
+            <p class="mt-6 text-slate-500 font-bold uppercase text-[10px] tracking-[0.4em]">Dokumentasi Penelitian Magister Urindo</p>
         </div>
 
-        <div class="grid lg:grid-cols-3 gap-10">
+        <div class="grid lg:grid-cols-3 gap-12">
             <div class="space-y-8">
-                <div class="aspect-[4/5] rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-white">
-                    <video autoplay muted loop playsinline><source src="rnd.mp4" type="video/mp4"></video>
+                <div class="group overflow-hidden rounded-[2.5rem] shadow-xl">
+                    <video autoplay muted loop playsinline class="w-full h-96 group-hover:scale-110"><source src="rnd.mp4" type="video/mp4"></video>
                 </div>
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 text-center">
-                    <h5 class="font-bold text-gray-800 text-xs uppercase tracking-widest mb-2">Phase 1: Research Design</h5>
-                    <p class="text-[11px] text-gray-500 leading-relaxed uppercase font-bold tracking-tighter">Studi literatur & Uji Formulasi Klinis</p>
+                <div class="text-center">
+                    <h5 class="text-xs font-black uppercase tracking-[0.3em] text-slate-400">Phase 1: Research Design</h5>
+                    <p class="mt-2 font-bold text-slate-800">Uji Formulasi & Klinis</p>
                 </div>
             </div>
 
             <div class="space-y-8">
                 <div class="grid grid-cols-2 gap-4">
-                    <div class="aspect-square rounded-[1.5rem] overflow-hidden shadow-lg"><video autoplay muted loop playsinline><source src="ambil-jeruk.mp4" type="video/mp4"></video></div>
-                    <div class="aspect-square rounded-[1.5rem] overflow-hidden shadow-lg"><video autoplay muted loop playsinline><source src="essential-oil.mp4" type="video/mp4"></video></div>
-                    <div class="aspect-square rounded-[1.5rem] overflow-hidden shadow-lg"><video autoplay muted loop playsinline><source src="potong-lidah-buaya.mp4" type="video/mp4"></video></div>
-                    <div class="aspect-square rounded-[1.5rem] overflow-hidden shadow-lg"><video autoplay muted loop playsinline><source src="pegang-lidah-buaya.mp4" type="video/mp4"></video></div>
+                    <video autoplay muted loop playsinline class="h-44 group-hover:scale-105 shadow-md"><source src="ambil-jeruk.mp4" type="video/mp4"></video>
+                    <video autoplay muted loop playsinline class="h-44 group-hover:scale-105 shadow-md"><source src="essential-oil.mp4" type="video/mp4"></video>
+                    <video autoplay muted loop playsinline class="h-44 group-hover:scale-105 shadow-md"><source src="potong-lidah-buaya.mp4" type="video/mp4"></video>
+                    <video autoplay muted loop playsinline class="h-44 group-hover:scale-105 shadow-md"><source src="pegang-lidah-buaya.mp4" type="video/mp4"></video>
                 </div>
-                <div class="bg-orange-600 p-6 rounded-2xl shadow-sm text-center text-white">
-                    <h5 class="font-bold text-orange-200 text-xs uppercase tracking-widest mb-2">Phase 2: Natural Extraction</h5>
-                    <p class="text-[11px] leading-relaxed uppercase font-bold tracking-tighter">Proses isolasi Limonene & Aloe Vera</p>
+                <div class="text-center">
+                    <h5 class="text-xs font-black uppercase tracking-[0.3em] text-orange-500">Phase 2: Extraction</h5>
+                    <p class="mt-2 font-bold text-slate-800">Isolasi Bahan Aktif Organik</p>
                 </div>
             </div>
 
             <div class="space-y-8">
-                <div class="aspect-video rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-orange-200">
-                    <video autoplay muted loop playsinline><source src="tekstur.mp4" type="video/mp4"></video>
+                <div class="aspect-video rounded-[2.5rem] overflow-hidden shadow-xl">
+                    <video autoplay muted loop playsinline class="w-full h-full"><source src="tekstur.mp4" type="video/mp4"></video>
                 </div>
-                <div class="aspect-[4/5] rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-white">
-                    <video autoplay muted loop playsinline><source src="tuang-lotion.mp4" type="video/mp4"></video>
+                <div class="aspect-[4/5] rounded-[2.5rem] overflow-hidden shadow-xl">
+                    <video autoplay muted loop playsinline class="w-full h-full"><source src="tuang-lotion.mp4" type="video/mp4"></video>
                 </div>
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 text-center text-orange-600">
-                    <h5 class="font-bold text-orange-600 text-xs uppercase tracking-widest mb-2">Phase 3: Texture Testing</h5>
-                    <p class="text-[11px] text-gray-500 leading-relaxed uppercase font-bold tracking-tighter">Finalisasi Viskositas & Absorbsi Epidermis</p>
+                <div class="text-center">
+                    <h5 class="text-xs font-black uppercase tracking-[0.3em] text-slate-400">Phase 3: Texture Testing</h5>
+                    <p class="mt-2 font-bold text-slate-800">Finalisasi Sensory & Absorbsi</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="ilmiah" class="py-24 bg-gray-900 text-white px-6">
+    <section id="formulasi" class="py-24 bg-slate-900 text-white px-6">
         <div class="max-w-7xl mx-auto">
-            <h2 class="text-3xl font-bold mb-20 text-center tracking-[0.3em] uppercase">Efikasi Bahan Aktif</h2>
+            <h2 class="text-3xl font-black text-center mb-16 tracking-[0.2em] uppercase">Efikasi Komponen Aktif</h2>
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="scientific-card p-10 bg-white/5 rounded-[3rem] text-center border-white/10">
-                    <h3 class="font-bold text-orange-500 text-lg mb-4">Limonene Agent</h3>
-                    <p class="text-[10px] text-gray-400 font-bold uppercase mb-4 tracking-widest">Ekstrak Citrus fam</p>
-                    <p class="text-xs text-gray-300 leading-relaxed">Bertindak sebagai neurotoksin alami bagi nyamuk <em>Aedes aegypti</em>, memberikan proteksi tanpa DEET.</p>
+                <div class="p-10 bg-white/5 rounded-[3rem] border border-white/10 hover:bg-orange-600/20 transition group">
+                    <h3 class="font-bold text-orange-500 text-lg mb-4 group-hover:text-white transition">Citrus Agent</h3>
+                    <p class="text-xs text-slate-400 font-bold uppercase mb-4 tracking-widest">Natural Repellent</p>
+                    <p class="text-sm text-slate-300 leading-relaxed font-light">Senyawa <strong>Limonene</strong> bertindak sebagai neurotoksin alami bagi vektor <em>Aedes aegypti</em>.</p>
                 </div>
-                <div class="scientific-card p-10 bg-white/5 rounded-[3rem] text-center border-white/10">
-                    <h3 class="font-bold text-orange-500 text-lg mb-4">Mineral UV Filter</h3>
-                    <p class="text-[10px] text-gray-400 font-bold uppercase mb-4 tracking-widest">SPF 30+++ Protection</p>
-                    <p class="text-xs text-gray-300 leading-relaxed">Zinc & Titanium Oxide memantulkan spektrum UVA/UVB secara fisik, mencegah eritema dan kerusakan DNA kulit.</p>
+                <div class="p-10 bg-white/5 rounded-[3rem] border border-white/10 hover:bg-orange-600/20 transition group">
+                    <h3 class="font-bold text-orange-500 text-lg mb-4 group-hover:text-white transition">Mineral UV</h3>
+                    <p class="text-xs text-slate-400 font-bold uppercase mb-4 tracking-widest">Physical Filter</p>
+                    <p class="text-sm text-slate-300 leading-relaxed font-light">Zinc & Titanium Oxide memantulkan spektrum UVA/UVB untuk mencegah kerusakan DNA kulit harian.</p>
                 </div>
-                <div class="scientific-card p-10 bg-white/5 rounded-[3rem] text-center border-white/10">
-                    <h3 class="font-bold text-orange-500 text-lg mb-4">Phyto-Hydration</h3>
-                    <p class="text-[10px] text-gray-400 font-bold uppercase mb-4 tracking-widest">Skin Barrier Recovery</p>
-                    <p class="text-xs text-gray-300 leading-relaxed">Sinergi Ceramide & Aloe Vera memperkuat ikatan intraseluler stratum korneum untuk mencegah TEWL.</p>
+                <div class="p-10 bg-white/5 rounded-[3rem] border border-white/10 hover:bg-orange-600/20 transition group">
+                    <h3 class="font-bold text-orange-500 text-lg mb-4 group-hover:text-white transition">Epidermis Care</h3>
+                    <p class="text-xs text-slate-400 font-bold uppercase mb-4 tracking-widest">Barrier Recovery</p>
+                    <p class="text-sm text-slate-300 leading-relaxed font-light">Sinergi Ceramide & Aloe Vera memperkuat barier intraseluler stratum korneum kulit.</p>
                 </div>
-                <div class="scientific-card p-10 bg-white/5 rounded-[3rem] text-center border-white/10">
-                    <h3 class="font-bold text-orange-500 text-lg mb-4">Jujuba Extract</h3>
-                    <p class="text-[10px] text-gray-400 font-bold uppercase mb-4 tracking-widest">Natural Antioxidant</p>
-                    <p class="text-xs text-gray-300 leading-relaxed">Mengandung flavonoid tinggi yang mempercepat regenerasi sel epidermis setelah terpapar panas matahari.</p>
+                <div class="p-10 bg-white/5 rounded-[3rem] border border-white/10 hover:bg-orange-600/20 transition group">
+                    <h3 class="font-bold text-orange-500 text-lg mb-4 group-hover:text-white transition">Jujuba Oil</h3>
+                    <p class="text-xs text-slate-400 font-bold uppercase mb-4 tracking-widest">Moisturizer</p>
+                    <p class="text-sm text-slate-300 leading-relaxed font-light">Kandungan flavonoid tinggi mempercepat regenerasi sel pasca paparan panas matahari intens.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="bg-white py-24 px-6 border-t">
+    <footer class="bg-white py-24 px-6 border-t border-slate-100">
         <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-end">
-            <div class="space-y-10">
+            <div class="space-y-10 text-left">
                 <div>
-                    <h3 class="text-4xl font-extrabold text-orange-600 mb-2 uppercase tracking-tighter">Pure Terra™ Edition</h3>
-                    <p class="text-gray-500 text-sm max-w-sm leading-relaxed font-medium italic">"Proyek Inovasi Epidemiologi dalam Upaya Mitigasi Penyakit Berbasis Vektor melalui Pendekatan Kewirausahaan Kesehatan Masyarakat."</p>
+                    <h3 class="text-4xl font-black text-orange-600 uppercase tracking-tighter">Pure Terra™ Edition</h3>
+                    <p class="text-slate-500 text-sm max-w-sm mt-4 font-medium italic">"Solusi preventif cerdas berbasis intervensi epidemiologi kesehatan masyarakat."</p>
                 </div>
                 <div class="space-y-4">
-                    <p class="text-xs font-bold text-gray-400 uppercase tracking-widest">Information Services:</p>
-                    <a href="https://wa.me/6287800070808?text=informasi%20lebih%20lanjut" target="_blank" class="text-2xl font-extrabold text-gray-900 hover:text-green-500 transition flex items-center gap-3">
-                        <span class="text-green-500 text-3xl">●</span> 0878 0007 0808 (dr. Anindiyah)
+                    <p class="text-xs font-black text-slate-400 uppercase tracking-widest">Hubungi Untuk Kerjasama:</p>
+                    <a href="https://wa.me/6287800070808?text=informasi%20lebih%20lanjut" target="_blank" class="text-2xl font-black text-slate-900 hover:text-orange-500 transition flex items-center gap-3">
+                        <span class="text-emerald-500 text-4xl">●</span> 0878 0007 0808 (dr. Anindiyah)
                     </a>
                 </div>
             </div>
-            <div class="text-left md:text-right flex flex-col justify-end space-y-4">
-                <p class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-2 uppercase">Tim Pengembang (Epidemiologi Urindo 2024):</p>
-                <p class="font-bold text-lg text-gray-800 leading-tight mb-4">dr. Sopiah Mamat, dr. Anindiyah Meyriasari K., <br>Alfinatun Musdzalifah, S.Ked, Aulia Arief Rahman, S.K.M</p>
-                <p class="text-orange-600 font-bold italic text-sm tracking-tighter uppercase border-t pt-4 border-gray-100">Program Studi Magister Kesehatan Masyarakat <br> Universitas Respati Indonesia</p>
-                <p class="text-gray-400 text-[10px] tracking-[0.4em] uppercase mt-8 font-bold">www.Pureterraedition.com</p>
+            <div class="text-left md:text-right space-y-6">
+                <p class="text-xs font-black text-slate-400 uppercase tracking-widest uppercase">Tim Pengembang (Epidemiologi Urindo 2024):</p>
+                <p class="font-black text-xl leading-tight text-slate-800 uppercase">dr. Sopiah Mamat, dr. Anindiyah Meyriasari K., <br>Alfinatun Musdzalifah, S.Ked, Aulia Arief Rahman, S.K.M</p>
+                <div class="pt-6 border-t border-slate-100">
+                    <p class="text-orange-600 font-black italic text-sm uppercase tracking-tighter">Program Studi Magister Kesehatan Masyarakat <br> Universitas Respati Indonesia</p>
+                    <p class="text-slate-400 text-[10px] tracking-[0.4em] uppercase mt-8 font-black">www.Pureterraedition.com</p>
+                </div>
             </div>
         </div>
     </footer>
 
     <script>
         const audio = document.getElementById('bgMusic');
-        const startAudio = () => {
+        const triggerAudio = () => {
             if (audio.paused) {
-                audio.play().catch(e => console.log("Audio deferred"));
+                audio.play().catch(e => console.log("Audio trigger blocked"));
             }
             ['click', 'scroll', 'touchstart', 'mousemove'].forEach(ev => 
-                window.removeEventListener(ev, startAudio)
+                window.removeEventListener(ev, triggerAudio)
             );
         };
         ['click', 'scroll', 'touchstart', 'mousemove'].forEach(ev => 
-            window.addEventListener(ev, startAudio)
+            window.addEventListener(ev, triggerAudio)
         );
     </script>
-
 </body>
 </html>
